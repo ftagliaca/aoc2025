@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "support"
+version = "0.1.0"
+description = "A support package providing utility functions."
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+readme = "README.md"  # Optional: Include if you have a README file
+requires-python = ">=3.7"
+dependencies = [
+    # Add your project dependencies here, e.g.,
+    # "requests>=2.25.1",
+]
+
+# Optional: Specify package classifiers
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",  # Update as per your license
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools]
+py-modules = ["support"]
+
+[project.scripts]
+aoc-download-input = "support:download_input"
+aoc-submit = "support:submit_solution"
+aoc-25-pt2 = "support:submit_25_pt2"
