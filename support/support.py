@@ -10,7 +10,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-from typing import Generator
+from typing import Generator, TypeVar
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -211,6 +211,9 @@ def format_coords_hash(coords: set[tuple[int, int]]) -> str:
 def print_coords_hash(coords: set[tuple[int, int]]) -> None:
     print(format_coords_hash(coords))
 
+T = TypeVar('T')
+def parse_grid(s: str, m: dict[str, T]) -> list[list[T]]:
+    return [[m[c] for c in line] for line in s.splitlines()]
 
 class Direction4(enum.Enum):
     UP = (0, -1)
