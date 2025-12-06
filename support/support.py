@@ -182,8 +182,16 @@ def parse_coords_hash(s: str) -> set[tuple[int, int]]:
     return coords
 
 
+def parse_blocks(s: str, sep: str = '\n') -> list[str]:
+    return [block.strip(sep) for block in s.split(sep*2)]
+
+
 def parse_numbers_split(s: str) -> list[int]:
     return [int(x) for x in s.split()]
+
+
+def parse_numbers_couple_split(s: str, sep: str = '-') -> list[tuple[int, int]]:
+    return [(int(x.split(sep)[0]), int(x.split(sep)[1])) for x in s.split()]
 
 
 def parse_numbers_split_2d(s: str) -> list[list[int]]:
